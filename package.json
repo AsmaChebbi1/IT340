@@ -1,0 +1,22 @@
+{
+  "name": "enseirb",
+  "version": "1.0.0",
+  "description": "GLRT - IT340",
+  "main": "ex1.test.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jchabanne/enseirb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jchabanne/enseirb/issues"
+  },
+  "homepage": "https://github.com/jchabanne/enseirb#readme",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
