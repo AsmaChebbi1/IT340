@@ -1,4 +1,4 @@
-const getBalance = require("./bank");
+const balance = require("./bank");
 const DAO = require("./bankDAO");
 
 describe("Test de retrieve Balance", () => {
@@ -6,11 +6,11 @@ describe("Test de retrieve Balance", () => {
   test("Validation que retrieve balance est bien appelée", () => {
     jest.spyOn(DAO, "retrieveBalance");
     //jest.spyOn(DAO, "retrieveBalance").mockReturnValue(1000);
-    const balance = getBalance(accountId);
+    balance.getBalance(accountId);
     expect(DAO.retrieveBalance).toHaveBeenCalledWith(accountId);
   });
   test("Validation que le solde récupéré par retrieveBalance est bien retourné ", () => {
-    const solde = getBalance(accountId);
+    const solde = balance.getBalance(accountId);
     expect(solde).toBe(2000);
   });
 });

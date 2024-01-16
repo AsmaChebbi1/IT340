@@ -3,4 +3,5 @@ function retrieveBalance(accountId) {
   const solde = 2000;
   return solde;
 }
-module.exports = { retrieveBalance };
+function debitAccount(accountId, amount) {}
+module.exports = { debitAccount, retrieveBalance };
