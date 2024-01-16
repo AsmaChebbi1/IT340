@@ -1,5 +1,7 @@
 const DAO = require("./bankDAO");
-function getBalance() {
-  DAO.retrieveBalance();
+
+function getBalance(accountId) {
+  return DAO.retrieveBalance(accountId);
 }
+
 module.exports = getBalance;

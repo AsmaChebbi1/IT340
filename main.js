@@ -1,3 +1,3 @@
 const getBalance = require("./bank");
 
-getBalance();
+getBalance("124d4");
