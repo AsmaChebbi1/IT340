@@ -8,5 +8,13 @@ function addPatient(lastName, firstName) {
 function getPatientList() {
   patientDAO.retrievePatientList();
 }
+function savePatient(id, lastName, firstName) {
+  const patients = patientDAO.retrievePatientList();
+  const indexPatient = patients.findIndex((p) => p.id === id);
 
-module.exports = { addPatient, getPatientList };
+  patients[indexPatient].lastname = lastName;
+  patients[indexPatient].firstname = firstName;
+  patientDAO.updatePatient(patients[indexPatient]);
+}
+
+module.exports = { addPatient, getPatientList, savePatient };

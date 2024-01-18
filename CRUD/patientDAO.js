@@ -9,8 +9,15 @@ function retrievePatientList() {
     const { creationDate, ...patientWithoutDate } = patient;
     return patientWithoutDate;
   });
-  console.log(patientWithoutDate);
+  console.log("Liste des patients sans date", patientWithoutDate);
   return patientWithoutDate;
 }
+function updatePatient(patient) {
+  const patients = database.patient;
+  const indexPatient = patients.findIndex((p) => p.id === patient.id);
 
-module.exports = { insertPatient, retrievePatientList };
+  patients[indexPatient] = { ...patients[indexPatient], ...patient };
+  console.log("Liste des patients après modification du patient", patients);
+  return patients;
+}
+module.exports = { insertPatient, retrievePatientList, updatePatient };
