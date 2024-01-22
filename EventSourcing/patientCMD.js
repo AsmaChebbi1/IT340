@@ -1,12 +1,12 @@
 const Event = require("./event");
-const { addEvent } = require("./eventStore");
+const eventStore = require("./eventStore");
 const Patient = require("./patient");
 
 function addPatient(lastName, firstName) {
   const patient = new Patient(lastName, firstName);
   const id = patient.id;
   const payload = { lastName, firstName };
-  addEvent("AddedPatient", id, payload, new Date());
+  eventStore.addEvent("AddedPatient", id, payload, new Date());
 }
 function restorePatient(id) {
   const patientEvents = eventList.filter((event) => event.patientId === id);
@@ -27,4 +27,15 @@ function restorePatient(id) {
 
   return patient;
 }
-module.exports = { addPatient, restorePatient };
+function savePatient(id, lastName, firstName) {
+  const patients = database.patientList;
+  const indexPatient = patients.findIndex((p) => p.id === id);
+  patients[indexPatient].lastname = lastName;
+  patients[indexPatient].firstname = firstName;
+  const patient = restorePatient(id);
+  patient.lastname = lastName;
+  patient.firstname = firstName;
+  eventStore.addEvent("patientSaved", id, patient, new Date());
+}
+
+module.exports = { addPatient, restorePatient, savePatient };
