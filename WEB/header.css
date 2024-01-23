@@ -1,0 +1,31 @@
+
+    /* fichier header.css */
+    @keyframes font-slide {
+        from {
+          text-align: start;
+        }
+        
+        50% {
+          text-align: center;
+        }
+        
+        to {
+          text-align: end;
+        }
+      }
+      /*Désactivation d el'animation */
+      @media (prefers-reduced-motion: reduce) {
+        .header {
+          animation: none; 
+        }
+      }
+    .header {
+        padding: var(--padding-scale);
+        border: 2px solid var(--border-color);
+        color: var(--txtcolor);
+        font-size: max(var(--header-font-size), var(--header-font-size-min));
+        height: 5rem;
+        width: 50%;
+        animation: font-slide 2s linear  infinite;
+
+    }

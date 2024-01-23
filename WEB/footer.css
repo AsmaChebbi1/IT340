@@ -1,0 +1,8 @@
+.footer {
+    padding: var(--padding-scale);
+    border: 2px solid var(--border-color);
+    color: var(--txtcolor);
+    font-size: var(--footer-font-size);
+    text-align: right; 
+
+}

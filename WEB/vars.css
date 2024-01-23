@@ -1,0 +1,10 @@
+:root {
+    --txtcolor: green;
+    --border-color: blue;
+    --padding-scale: 20px;
+    --header-font-size: 80px; 
+    --section-font-size: 40px; 
+    --footer-font-size: 60px; 
+    --header-font-size-min: 32px
+    
+  }
